@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: demo
+---
+apiVersion: kubedb.com/v1alpha2
+kind: Postgres
+metadata:
+  name: pg-ha-cluster
+  namespace: demo
+spec:
+  version: "16.4"
+  replicas: 3
+  standbyMode: Hot
+  storageType: Durable
+  storage:
+    accessModes:
+      - ReadWriteOnce
+    resources:
+      requests:
+        storage: 3Gi
+  terminationPolicy: WipeOut

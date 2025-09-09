@@ -1,0 +1,26 @@
+# Objective: Test "split-brain" resilience by isolating the primary from its replicas.
+# KubeDB should NOT promote a new primary as the old one is still alive.
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata:
+  name: pg-primary-network-partition
+  namespace: chaos-mesh
+spec:
+  action: partition
+  mode: one
+  selector:
+    namespaces:
+      - demo
+    labelSelectors:
+      "app.kubernetes.io/instance": "pg-ha-cluster"
+      "kubedb.com/role": "primary"
+  target:
+    mode: all
+    selector:
+      namespaces:
+        - demo
+      labelSelectors:
+        "app.kubernetes.io/instance": "pg-ha-cluster"
+        "kubedb.com/role": "standby"
+  duration: "2m"
+  direction: both
