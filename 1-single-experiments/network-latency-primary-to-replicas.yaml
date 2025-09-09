@@ -4,7 +4,7 @@ metadata:
   name: pg-replication-latency
   namespace: chaos-mesh
 spec:
-  action: latency
+  action: delay
   mode: one
   selector:
     namespaces:
@@ -20,8 +20,8 @@ spec:
       labelSelectors:
         "app.kubernetes.io/instance": "pg-ha-cluster"
         "kubedb.com/role": "standby"
-  latency:
-    latency: "150ms"
+  delay:
+    latency: "250ms"
     jitter: "50ms"
-  duration: "2m"
-  direction: to
+  duration: "10m"
+  direction: both
