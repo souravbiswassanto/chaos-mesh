@@ -21,7 +21,7 @@ spec:
         "app.kubernetes.io/instance": "pg-ha-cluster"
         "kubedb.com/role": "standby"
   delay:
-    latency: "250ms"
+    latency: "1s"
     jitter: "50ms"
   duration: "10m"
   direction: both
