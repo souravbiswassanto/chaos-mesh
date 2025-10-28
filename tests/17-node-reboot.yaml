@@ -1,0 +1,16 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NodeChaos
+metadata:
+  name: pg-cluster-nodes-reboot
+  namespace: chaos-mesh
+spec:
+  action: node-restart
+  mode: all
+  selector:
+    nodes:
+      # Replace with actual node names where postgres pods are running
+      # You can get node names using: kubectl get pods -n demo -o wide
+      - worker-node-1
+      - worker-node-2
+      - worker-node-3
+  duration: "30s"

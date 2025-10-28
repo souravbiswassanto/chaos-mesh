@@ -1,0 +1,20 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata:
+  name: pg-primary-network-delay
+  namespace: chaos-mesh
+spec:
+  action: delay
+  mode: one
+  selector:
+    namespaces:
+      - demo
+    labelSelectors:
+      "app.kubernetes.io/instance": "pg-ha-cluster"
+      "kubedb.com/role": "primary"
+  delay:
+    latency: "500ms"
+    jitter: "100ms"
+    correlation: "50"
+  duration: "10m"
+  direction: both

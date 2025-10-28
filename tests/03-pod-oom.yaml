@@ -1,0 +1,18 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: StressChaos
+metadata:
+  name: pg-primary-oom
+  namespace: chaos-mesh
+spec:
+  mode: one
+  selector:
+    namespaces:
+      - demo
+    labelSelectors:
+      "app.kubernetes.io/instance": "pg-ha-cluster"
+      "kubedb.com/role": "primary"
+  stressors:
+    memory:
+      workers: 1
+      size: "1500Mi"  # Exceed the 1Gi limit to trigger OOM
+  duration: "10m"

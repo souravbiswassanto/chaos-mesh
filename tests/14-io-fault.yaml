@@ -1,0 +1,19 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: IOChaos
+metadata:
+  name: pg-primary-io-fault
+  namespace: chaos-mesh
+spec:
+  action: fault
+  mode: one
+  selector:
+    namespaces:
+      - demo
+    labelSelectors:
+      "app.kubernetes.io/instance": "pg-ha-cluster"
+      "kubedb.com/role": "primary"
+  volumePath: /var/lib/postgresql/data
+  path: /var/lib/postgresql/data/**/*
+  errno: 5  # EIO (Input/output error)
+  percent: 50
+  duration: "5m"
