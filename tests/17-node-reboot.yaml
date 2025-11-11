@@ -1,16 +1,15 @@
 apiVersion: chaos-mesh.org/v1alpha1
-kind: NodeChaos
+kind: PodChaos
 metadata:
-  name: pg-cluster-nodes-reboot
+  name: pg-cluster-all-pods-kill
   namespace: chaos-mesh
 spec:
-  action: node-restart
+  action: pod-kill
   mode: all
   selector:
-    nodes:
-      # Replace with actual node names where postgres pods are running
-      # You can get node names using: kubectl get pods -n demo -o wide
-      - worker-node-1
-      - worker-node-2
-      - worker-node-3
+    namespaces:
+      - demo
+    labelSelectors:
+      "app.kubernetes.io/instance": "pg-ha-cluster"
+  gracePeriod: 0
   duration: "30s"

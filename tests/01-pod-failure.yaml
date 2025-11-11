@@ -13,5 +13,3 @@ spec:
       "app.kubernetes.io/instance": "pg-ha-cluster"
       "kubedb.com/role": "primary"
   duration: "5m"
-  scheduler:
-    cron: "@every 10m"

@@ -12,8 +12,10 @@ spec:
     labelSelectors:
       "app.kubernetes.io/instance": "pg-ha-cluster"
       "kubedb.com/role": "primary"
-  volumePath: /var/lib/postgresql/data
-  path: /var/lib/postgresql/data/**/*
+  volumePath: /var/pv
+  path: /var/pv/data/**/*
   errno: 5  # EIO (Input/output error)
   percent: 50
   duration: "5m"
+  containerNames:
+    - postgres

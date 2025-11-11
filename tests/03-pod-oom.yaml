@@ -14,5 +14,5 @@ spec:
   stressors:
     memory:
       workers: 1
-      size: "1500Mi"  # Exceed the 1Gi limit to trigger OOM
+      size: "1500MB"  # Exceed the 1Gi limit to trigger OOM
   duration: "10m"

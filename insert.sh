@@ -3,7 +3,7 @@ sum=0
 row=1
 
 while true; do
-    sleep .1
+    sleep .05
     
     # Ensure table exists
     psql -U postgres -h 127.0.0.1 -p 5678 -d postgres \

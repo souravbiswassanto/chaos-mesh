@@ -2,15 +2,12 @@
 
 while true; do
     clear
-    echo "=== File Contents in /var/pv/lsn - $(date) ==="
     
     # Check if directory exists
     if [ -d "lsn" ]; then
         for file in lsn/*; do
             if [ -f "$file" ]; then
-                echo "─────────────────────────────────────────"
-                echo "File: $file"
-                echo "Content:"
+                echo "───────────────────"
                 cat "$file"
                 echo
             fi
@@ -19,6 +16,6 @@ while true; do
         echo "Directory 'lsn' not found!"
     fi
     
-    echo "─────────────────────────────────────────"
+    echo "────────────"
     sleep 0.1
 done

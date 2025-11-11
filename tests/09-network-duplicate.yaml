@@ -12,6 +12,13 @@ spec:
     labelSelectors:
       "app.kubernetes.io/instance": "pg-ha-cluster"
       "kubedb.com/role": "primary"
+  target:
+    mode: all
+    selector:
+      namespaces:
+        - demo
+      labelSelectors:
+        "app.kubernetes.io/instance": "pg-ha-cluster"
   duplicate:
     duplicate: "50"
     correlation: "25"
