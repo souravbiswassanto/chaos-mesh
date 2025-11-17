@@ -94,7 +94,7 @@ spec:
       serviceAccountName: pg-ha-cluster
   replicas: 3
   replication:
-    walKeepSize: 1536
+    walKeepSize: 3000
     walLimitPolicy: WALKeepSize
   sslMode: disable
   standbyMode: Hot
