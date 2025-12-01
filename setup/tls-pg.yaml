@@ -4,6 +4,31 @@ metadata:
   name: pg-ha-cluster
   namespace: demo
 spec:
+  monitor:
+    agent: prometheus.io/operator
+    prometheus:
+      exporter:
+        port: 56790
+        resources:
+          requests:
+            cpu: 200m
+            memory: 250Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          runAsGroup: 70
+          runAsNonRoot: true
+          runAsUser: 70
+          seccompProfile:
+            type: RuntimeDefault
+      serviceMonitor:
+        interval: 10s
+        labels:
+          release: prometheus
+  clientAuthMode: "cert"
+  sslMode: "verify-full"
   allowedSchemas:
     namespaces:
       from: Same
@@ -12,7 +37,6 @@ spec:
     apiGroup: ""
     name: pg-ha-cluster-auth
   autoOps: {}
-  clientAuthMode: md5
   deletionPolicy: Halt
   halted: false
   healthChecker:
@@ -96,8 +120,12 @@ spec:
   replication:
     walKeepSize: 3000
     walLimitPolicy: WALKeepSize
-  sslMode: disable
   standbyMode: Hot
+  tls:
+    issuerRef:
+      name: pg-issuer
+      kind: Issuer
+      apiGroup: cert-manager.io
   storage:
     accessModes:
     - ReadWriteOnce
@@ -105,4 +133,4 @@ spec:
       requests:
         storage: 3Gi
   storageType: Durable
-  version: "16.4-bookworm"
+  version: "16.4"
