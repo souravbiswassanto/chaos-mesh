@@ -1,11 +1,7 @@
-# database went into not ready state due to io fault injection on primary
-# but existing connections are okay and we still can do read/write
-# so this is expected behavior from our end, as primary is running, we don't do the failover
-# database goes back to ready state once chaos is stopped
 apiVersion: chaos-mesh.org/v1alpha1
 kind: IOChaos
 metadata:
-  name: pg-primary-io-latency 
+  name: pg-io-latency-partial
   namespace: chaos-mesh
 spec:
   action: latency
@@ -19,7 +15,7 @@ spec:
   volumePath: /var/pv
   path: /var/pv/data/**/*
   delay: "500ms"
-  percent: 100
-  duration: "10m"
+  percent: 50
+  duration: "5m"
   containerNames:
     - postgres

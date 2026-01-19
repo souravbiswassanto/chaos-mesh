@@ -1,0 +1,16 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: PodChaos
+metadata:
+  name: pg-kill-all-processes
+  namespace: chaos-mesh
+spec:
+  action: container-kill
+  mode: all
+  selector:
+    namespaces:
+      - demo
+    labelSelectors:
+      "app.kubernetes.io/instance": "pg-ha-cluster"
+  containerNames:
+    - postgres
+  duration: "30s"

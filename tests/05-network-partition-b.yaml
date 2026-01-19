@@ -1,0 +1,25 @@
+# Failed
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata:
+  name: pg-network-partition-replica-primary
+  namespace: chaos-mesh
+spec:
+  action: partition
+  mode: one
+  selector:
+    namespaces:
+      - demo
+    labelSelectors:
+      "app.kubernetes.io/instance": "pg-ha-cluster"
+      "kubedb.com/role": "standby"
+  target:
+    mode: one
+    selector:
+      namespaces:
+        - demo
+      labelSelectors:
+        "app.kubernetes.io/instance": "pg-ha-cluster"
+        "kubedb.com/role": "primary"
+  direction: both
+  duration: "3m"

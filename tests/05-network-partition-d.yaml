@@ -1,0 +1,22 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata:
+  name: pg-network-partition-all-pods
+  namespace: chaos-mesh
+spec:
+  action: partition
+  mode: all
+  selector:
+    namespaces:
+      - demo
+    labelSelectors:
+      "app.kubernetes.io/instance": "pg-ha-cluster"
+  target:
+    mode: all
+    selector:
+      namespaces:
+        - demo
+      labelSelectors:
+        "app.kubernetes.io/instance": "pg-ha-cluster"
+  direction: both
+  duration: "3m"
