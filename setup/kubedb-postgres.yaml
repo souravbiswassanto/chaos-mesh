@@ -4,105 +4,28 @@ metadata:
   name: pg-ha-cluster
   namespace: demo
 spec:
-  allowedSchemas:
-    namespaces:
-      from: Same
-  authSecret:
-    activeFrom: "2025-10-16T04:56:36Z"
-    apiGroup: ""
-    name: pg-ha-cluster-auth
-  autoOps: {}
   clientAuthMode: md5
-  deletionPolicy: Halt
-  halted: false
-  healthChecker:
-    failureThreshold: 1
-    periodSeconds: 10
-    timeoutSeconds: 10
-  leaderElection:
-    electionTick: 10
-    heartbeatTick: 1
-    maximumLagBeforeFailover: 67108864
-    period: 300ms
-    transferLeadershipInterval: 1s
-    transferLeadershipTimeout: 1m0s
+  deletionPolicy: WipeOut
   podTemplate:
-    controller: {}
-    metadata: {}
     spec:
       containers:
-      - name: postgres
-        resources:
-          limits:
-            memory: 1Gi
-          requests:
-            cpu: 500m
-            memory: 1Gi
-        securityContext:
-          allowPrivilegeEscalation: false
-          capabilities:
-            drop:
-            - ALL
-          runAsGroup: 70
-          runAsNonRoot: true
-          runAsUser: 70
-          seccompProfile:
-            type: RuntimeDefault
-      - name: pg-coordinator
-        args:
-          - --v=5
-        resources:
-          limits:
-            memory: 256Mi
-          requests:
-            cpu: 200m
-            memory: 256Mi
-        securityContext:
-          allowPrivilegeEscalation: false
-          capabilities:
-            drop:
-            - ALL
-          runAsGroup: 70
-          runAsNonRoot: true
-          runAsUser: 70
-          seccompProfile:
-            type: RuntimeDefault
-      initContainers:
-      - name: postgres-init-container
-        resources:
-          limits:
-            memory: 512Mi
-          requests:
-            cpu: 200m
-            memory: 256Mi
-        securityContext:
-          allowPrivilegeEscalation: false
-          capabilities:
-            drop:
-            - ALL
-          runAsGroup: 70
-          runAsNonRoot: true
-          runAsUser: 70
-          seccompProfile:
-            type: RuntimeDefault
-      podPlacementPolicy:
-        name: default
-      securityContext:
-        fsGroup: 70
-        runAsGroup: 70
-        runAsUser: 70
-      serviceAccountName: pg-ha-cluster
+        - name: postgres
+          resources:
+            limits:
+              memory: 3Gi
+            requests:
+              cpu: 2
+              memory: 2Gi
   replicas: 3
   replication:
     walKeepSize: 3000
     walLimitPolicy: WALKeepSize
-  sslMode: disable
   standbyMode: Hot
   storage:
     accessModes:
-    - ReadWriteOnce
+      - ReadWriteOnce
     resources:
       requests:
-        storage: 3Gi
+        storage: 20Gi
   storageType: Durable
-  version: "16.4-bookworm"
+  version: "16.4"
