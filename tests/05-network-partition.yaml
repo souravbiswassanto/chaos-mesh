@@ -21,4 +21,4 @@ spec:
         "app.kubernetes.io/instance": "pg-ha-cluster"
         "kubedb.com/role": "standby"
   direction: both
-  duration: "5m"
+  duration: "4m"

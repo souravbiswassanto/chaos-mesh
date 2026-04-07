@@ -22,6 +22,6 @@ spec:
   attr:
     perm: 444  # Read-only permissions
   percent: 100
-  duration: "10m"
+  duration: "4m"
   containerNames:
     - postgres

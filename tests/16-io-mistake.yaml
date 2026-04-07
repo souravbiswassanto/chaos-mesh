@@ -23,7 +23,7 @@ spec:
     maxOccurrences: 10
     maxLength: 100
   percent: 50
-  duration: "10m"
+  duration: "5m"
   containerNames:
     - postgres
 

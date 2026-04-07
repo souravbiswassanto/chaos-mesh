@@ -24,4 +24,4 @@ spec:
     limit: 20000
     buffer: 10000
   direction: both
-  duration: "10m"
+  duration: "5m"

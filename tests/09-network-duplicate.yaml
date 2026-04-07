@@ -22,5 +22,5 @@ spec:
   duplicate:
     duplicate: "50"
     correlation: "25"
-  duration: "10m"
+  duration: "4m"
   direction: both

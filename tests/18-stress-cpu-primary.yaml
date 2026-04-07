@@ -15,4 +15,4 @@ spec:
     cpu:
       workers: 2
       load: 90
-  duration: "10m"
+  duration: "2m"

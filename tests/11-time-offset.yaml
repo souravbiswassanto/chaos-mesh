@@ -14,4 +14,4 @@ spec:
   timeOffset: "-2h"
   clockIds:
     - CLOCK_REALTIME
-  duration: "10m"
+  duration: "2m"
