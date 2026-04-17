@@ -5,7 +5,7 @@ metadata:
   namespace: chaos-mesh
 spec:
   action: pod-failure
-  mode: one
+  mode: all
   selector:
     namespaces:
       - demo

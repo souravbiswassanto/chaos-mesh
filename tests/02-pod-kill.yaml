@@ -5,12 +5,10 @@ metadata:
   namespace: chaos-mesh
 spec:
   action: pod-kill
-  mode: one
+  mode: all
   selector:
     namespaces:
       - demo
     labelSelectors:
       "app.kubernetes.io/instance": "pg-ha-cluster"
       "kubedb.com/role": "primary"
-  gracePeriod: 0
-  duration: "30s"
