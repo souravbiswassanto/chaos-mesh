@@ -10,7 +10,7 @@ metadata:
   namespace: chaos-mesh
 spec:
   action: attrOverride
-  mode: one
+  mode: all
   selector:
     namespaces:
       - demo

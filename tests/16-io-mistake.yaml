@@ -9,7 +9,7 @@ metadata:
   namespace: chaos-mesh
 spec:
   action: mistake
-  mode: one
+  mode: all
   selector:
     namespaces:
       - demo

@@ -5,7 +5,7 @@ metadata:
   namespace: chaos-mesh
 spec:
   action: error
-  mode: one
+  mode: all
   selector:
     namespaces:
       - demo

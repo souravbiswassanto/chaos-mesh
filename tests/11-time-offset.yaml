@@ -4,7 +4,7 @@ metadata:
   name: pg-primary-time-offset
   namespace: chaos-mesh
 spec:
-  mode: one
+  mode: all
   selector:
     namespaces:
       - demo
