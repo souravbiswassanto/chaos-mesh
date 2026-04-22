@@ -10,7 +10,7 @@ spec:
     namespaces:
       - demo
     labelSelectors:
-      "app.kubernetes.io/instance": "pg-ha-cluster"
+      "app.kubernetes.io/component": "database"
       "kubedb.com/role": "primary"
   target:
     mode: all
@@ -18,10 +18,10 @@ spec:
       namespaces:
         - demo
       labelSelectors:
-        "app.kubernetes.io/instance": "pg-ha-cluster"
+        "app.kubernetes.io/component": "database"
   bandwidth:
-    rate: "1mbps"
-    limit: 20000
-    buffer: 10000
+    rate: "1bps"
+    limit: 2000
+    buffer: 1000
   direction: both
   duration: "5m"

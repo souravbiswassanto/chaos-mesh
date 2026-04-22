@@ -10,7 +10,7 @@ spec:
     namespaces:
       - demo
     labelSelectors:
-      "app.kubernetes.io/instance": "pg-ha-cluster"
+      "app.kubernetes.io/component": "database"
       "kubedb.com/role": "primary"
   target:
     mode: all
@@ -18,9 +18,9 @@ spec:
       namespaces:
         - demo
       labelSelectors:
-        "app.kubernetes.io/instance": "pg-ha-cluster"
+        "app.kubernetes.io/component": "database"
   corrupt:
-    corrupt: "50"
+    corrupt: "100"
     correlation: "25"
-  duration: "4m"
+  duration: "3m"
   direction: both

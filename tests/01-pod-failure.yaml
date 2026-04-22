@@ -10,6 +10,6 @@ spec:
     namespaces:
       - demo
     labelSelectors:
-      "app.kubernetes.io/instance": "pg-ha-cluster"
+      "app.kubernetes.io/component": "database"
       "kubedb.com/role": "primary"
   duration: "5m"

@@ -9,10 +9,10 @@ spec:
     namespaces:
       - demo
     labelSelectors:
-      "app.kubernetes.io/instance": "pg-ha-cluster"
+      "app.kubernetes.io/component": "database"
       "kubedb.com/role": "standby"
   stressors:
     memory:
       workers: 1
       size: "800MB"  # High memory usage but not OOM
-  duration: "10m"
+  duration: "3m"

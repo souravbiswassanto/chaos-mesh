@@ -14,7 +14,7 @@ spec:
     namespaces:
       - demo
     labelSelectors:
-      "app.kubernetes.io/instance": "pg-ha-cluster"
+      "app.kubernetes.io/component": "database"
       "kubedb.com/role": "primary"
   volumePath: /var/pv
   path: /var/pv/data/**/*
@@ -23,7 +23,7 @@ spec:
     maxOccurrences: 10
     maxLength: 100
   percent: 50
-  duration: "5m"
+  duration: "3m"
   containerNames:
     - postgres
 

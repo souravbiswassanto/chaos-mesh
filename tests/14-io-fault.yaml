@@ -15,12 +15,12 @@ spec:
     namespaces:
       - demo
     labelSelectors:
-      "app.kubernetes.io/instance": "pg-ha-cluster"
+      "app.kubernetes.io/component": "database"
       "kubedb.com/role": "primary"
   volumePath: /var/pv
   path: /var/pv/data/**/*
   errno: 5  # EIO (Input/output error)
   percent: 50
-  duration: "5m"
+  duration: "4m"
   containerNames:
     - postgres

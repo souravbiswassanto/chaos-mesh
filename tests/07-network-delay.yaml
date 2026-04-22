@@ -10,7 +10,7 @@ spec:
     namespaces:
       - demo
     labelSelectors:
-      "app.kubernetes.io/instance": "pg-ha-cluster"
+      "app.kubernetes.io/component": "database"
       "kubedb.com/role": "primary"
   target:
     mode: all
@@ -18,10 +18,10 @@ spec:
       namespaces:
         - demo
       labelSelectors:
-        "app.kubernetes.io/instance": "pg-ha-cluster"
+        "app.kubernetes.io/component": "database"
   delay:
-    latency: "500ms"
-    jitter: "100ms"
+    latency: "1s"
+    jitter: "500ms"
     correlation: "50"
-  duration: "10m"
+  duration: "3m"
   direction: both

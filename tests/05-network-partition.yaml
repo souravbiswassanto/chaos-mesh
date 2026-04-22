@@ -10,7 +10,7 @@ spec:
     namespaces:
       - demo
     labelSelectors:
-      "app.kubernetes.io/instance": "pg-ha-cluster"
+      "app.kubernetes.io/component": "database"
       "kubedb.com/role": "primary"
   target:
     mode: all
@@ -18,7 +18,7 @@ spec:
       namespaces:
         - demo
       labelSelectors:
-        "app.kubernetes.io/instance": "pg-ha-cluster"
+        "app.kubernetes.io/component": "database"
         "kubedb.com/role": "standby"
   direction: both
   duration: "4m"

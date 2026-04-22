@@ -14,12 +14,12 @@ spec:
     namespaces:
       - demo
     labelSelectors:
-      "app.kubernetes.io/instance": "pg-ha-cluster"
+      "app.kubernetes.io/component": "database"
       "kubedb.com/role": "primary"
   volumePath: /var/pv
   path: /var/pv/data/**/*
-  delay: "500ms"
+  delay: "1s"
   percent: 100
-  duration: "10m"
+  duration: "4m"
   containerNames:
     - postgres
