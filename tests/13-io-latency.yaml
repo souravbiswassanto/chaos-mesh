@@ -18,8 +18,7 @@ spec:
       "kubedb.com/role": "primary"
   volumePath: /var/pv
   path: /var/pv/data/**/*
-  delay: "1s"
+  delay: "2s"
   percent: 100
-  duration: "4m"
-  containerNames:
-    - postgres
+  duration: "2m"
+

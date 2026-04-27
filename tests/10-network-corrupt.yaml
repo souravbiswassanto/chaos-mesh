@@ -21,6 +21,6 @@ spec:
         "app.kubernetes.io/component": "database"
   corrupt:
     corrupt: "100"
-    correlation: "25"
-  duration: "3m"
+    correlation: "100"
+  duration: "2m"
   direction: both

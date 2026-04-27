@@ -20,8 +20,7 @@ spec:
   volumePath: /var/pv
   path: /var/pv/data/**/*
   attr:
-    perm: 444  # Read-only permissions
+    perm: 72  # Read-only permissions
   percent: 100
-  duration: "4m"
-  containerNames:
-    - postgres
+  duration: "2m"
+

@@ -20,7 +20,5 @@ spec:
   volumePath: /var/pv
   path: /var/pv/data/**/*
   errno: 5  # EIO (Input/output error)
-  percent: 50
-  duration: "4m"
-  containerNames:
-    - postgres
+  percent: 100
+  duration: "2m"
