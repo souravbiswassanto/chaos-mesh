@@ -1,7 +1,7 @@
 apiVersion: kubedb.com/v1
 kind: Postgres
 metadata:
-  name: pg-ha-cluster
+  name: async
   namespace: demo
 spec:
   clientAuthMode: md5
@@ -28,5 +28,4 @@ spec:
       requests:
         storage: 20Gi
   storageType: Durable
-  streamingMode: Synchronous
   version: "16.4"

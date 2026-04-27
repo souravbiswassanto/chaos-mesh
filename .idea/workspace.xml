@@ -6,6 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="ba840329-6672-44da-a4f9-7edc1e0293dd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/run_tests.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/run_tests.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup/kubedb-postgres.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/setup/kubedb-postgres.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/01-pod-failure.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/tests/01-pod-failure.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/03-pod-oom.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/tests/03-pod-oom.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/04-kill-postgres-process.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/tests/04-kill-postgres-process.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/05-network-partition.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/tests/05-network-partition.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/17-node-reboot.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/tests/17-node-reboot.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/19-stress-memory-replica.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/tests/19-stress-memory-replica.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

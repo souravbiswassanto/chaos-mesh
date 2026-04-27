@@ -16,4 +16,4 @@ spec:
       workers: 1
       size: "10GB"
       oomScoreAdj: -1000
-  duration: 30s
+  duration: 2m

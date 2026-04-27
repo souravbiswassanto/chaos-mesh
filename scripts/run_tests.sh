@@ -37,7 +37,7 @@ for test_file in "${test_files[@]}"; do
 
     kubectl apply -f "$test_file"
     if [[ $initial == "sleep" ]];then
-      sleep 100
+      sleep 70
       initial="no"
     fi
 

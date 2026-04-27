@@ -21,4 +21,4 @@ spec:
         "app.kubernetes.io/component": "database"
         "kubedb.com/role": "standby"
   direction: both
-  duration: "4m"
+  duration: "3m"
