@@ -20,8 +20,8 @@ spec:
       labelSelectors:
         "app.kubernetes.io/component": "database"
   delay:
-    latency: "1s"
-    jitter: "500ms"
-    correlation: "50"
-  duration: "3m"
-  direction: both
+    latency: 2000ms
+    correlation: '100'
+    jitter: 0ms
+  direction: to
+  duration: 2m

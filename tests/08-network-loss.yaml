@@ -20,7 +20,7 @@ spec:
       labelSelectors:
         "app.kubernetes.io/component": "database"
   loss:
-    loss: "100"
-    correlation: "100"
-  duration: "3m"
-  direction: both
+    loss: '100'
+    correlation: '100'
+  direction: to
+  duration: 2m

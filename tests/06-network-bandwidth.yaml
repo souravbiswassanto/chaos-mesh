@@ -20,8 +20,8 @@ spec:
       labelSelectors:
         "app.kubernetes.io/component": "database"
   bandwidth:
-    rate: "1bps"
-    limit: 2000
-    buffer: 1000
+    rate: '1bps'
+    limit: 20971520
+    buffer: 10000
   direction: both
-  duration: "5m"
+  duration: "2m"
